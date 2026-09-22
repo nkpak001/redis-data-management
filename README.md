@@ -1,12 +1,12 @@
-# Redis Data Management & Performance
+# Redis Clinic Scheduling Project
 
-## Project Overview
+## About This Project
 
-This project explores advanced Redis data modeling and performance concepts using a healthcare appointment system. I used Redis to model patients, doctors, and appointments while implementing indexing, scheduling, temporary holds, transaction control, and activity logging.
+I completed this project for CS 650: Advanced Databases at Old Dominion University. The assignment gave me hands on experience working with Redis and using different Redis data structures to build a clinic appointment scheduling system.
 
-This project was completed as part of my graduate coursework in Computer Science at Old Dominion University.
+The system included patients, doctors, appointments, scheduling, temporary appointment holds, and booking activity.
 
-## Tools & Technologies
+## Tools I Used
 
 - Redis
 - Python
@@ -14,52 +14,25 @@ This project was completed as part of my graduate coursework in Computer Science
 - Google Colab
 - Jupyter Notebook
 
-## Project Design
+## What I Did
 
-The project models a clinic scheduling system containing:
+I used Redis hashes to store information about patients, doctors, and appointments. I also worked with sets and sorted sets to organize and retrieve data in different ways.
 
-- Patients
-- Doctors
-- Appointments
-- Doctor specialties
-- Appointment schedules
-- Temporary appointment holds
-- Booking activity records
+Some of the main parts of the project included:
 
-Redis hashes were used to represent entities, while sets and sorted sets supported indexing and scheduling.
+- Creating and managing patient, doctor, and appointment data
+- Using Redis hashes to store records
+- Creating secondary indexes with sets
+- Using sorted sets to manage appointment schedules
+- Using TTL expiration for temporary appointment holds
+- Building a booking process that prevents the same appointment from being booked twice
+- Working with WATCH, MULTI, and EXEC for transactions
+- Using optimistic locking to handle changes during the booking process
+- Using Redis Streams to keep a record of booking activity
+- Connecting Python to Redis with redis-py
 
-## Technical Work
+## What I Learned
 
-The project included:
+Before this project, most of my database experience focused on traditional relational databases and SQL. This assignment helped me understand how a NoSQL database like Redis stores and manages data differently.
 
-- Modeling data with Redis hashes
-- Creating secondary indexes using sets
-- Using sorted sets for appointment scheduling
-- Implementing time-bound appointment holds with TTL expiration
-- Building an atomic booking process to prevent double-booking
-- Using WATCH, MULTI, and EXEC for optimistic locking and transaction control
-- Handling potential race conditions during concurrent booking attempts
-- Using Redis Streams to maintain an audit trail of booking activity
-- Applying consistent key naming and namespace conventions
-- Working with Python and redis-py to interact with Redis
-
-## Skills Demonstrated
-
-- Redis
-- Python
-- NoSQL Data Modeling
-- Data Structures
-- Secondary Indexing
-- Transactions
-- Optimistic Locking
-- TTL and Expiration
-- Redis Streams
-- Concurrency Control
-- Data Validation
-- Analytical Problem Solving
-
-## Author
-
-Necey Kpakio  
-M.S. Computer Science  
-Old Dominion University
+I also got more experience with transactions, expiration times, indexing, and handling situations where multiple users could try to access or change the same data. Building the appointment booking portion helped me see how Redis can be used for real applications where speed and data consistency are important.
